@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 
@@ -51,11 +52,11 @@ public class Product {
 	@Column(name = "units_in_stock")
 	private int unitsInStock;
 	
-	@CreationTimestamp //hibernate will manage timestamps
+	@CreationTimestamp //hibernate will manage creation timestamps
 	@Column(name = "date_created")
 	private Date dateCreated;
 	
-	@CreationTimestamp //hibernate will manage timestamps
+	@UpdateTimestamp //hibernate will manage update timestamps
 	@Column(name = "last_updated")
 	private Date lastUpdated;
 }
