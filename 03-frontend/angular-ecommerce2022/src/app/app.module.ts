@@ -23,6 +23,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(routes)
     
   ],
   providers: [ProductService],
