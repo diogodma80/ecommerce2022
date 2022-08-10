@@ -41,6 +41,13 @@ export class ProductService {
       map(response => response._embedded.products)
     );
   }
+
+  getProduct(theProductId: number): Observable<Product> {
+    // need to build URL based on the product id
+    const productUrl = `${this.baseUrl}/${theProductId}`;
+
+    return this.httpClient.get<Product>(productUrl);
+  }
 }
 
 // unwraps the JSON from Spring Data REST using the _embedded entry
